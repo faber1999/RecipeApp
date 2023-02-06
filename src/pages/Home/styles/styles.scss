@@ -1,0 +1,22 @@
+@use '@/styles/variables.scss' as *;
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 4rem 4rem 12rem 4rem;
+
+  &-header {
+    & span {
+      font-size: 67px;
+      color: $font-secondary-color;
+    }
+  }
+
+  &-items {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    gap: 2rem;
+  }
+}

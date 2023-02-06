@@ -1,0 +1,17 @@
+.loader {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+
+  background-color: rgba($color: #d5d5d5, $alpha: 0.5);
+  z-index: 1;
+  position: absolute;
+}
+
+#root {
+  // overflow: hidden !important;
+}

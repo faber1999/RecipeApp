@@ -1,17 +1,21 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { HomePage } from '../pages'
-import MainLayout from '../components/MainLayout/MainLayout'
+import routes from './routes'
+import { Suspense } from 'react'
+import { Loader, MainLayout } from '@/components'
 
 const MainRouter = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="" element={<MainLayout />}>
-          <Route index element={<HomePage />} />
-          <Route path="recipes" element={<div>recetas</div>}></Route>
-        </Route>
-        <Route path="*" element={<div>404 not found</div>} />
-      </Routes>
+      <MainLayout>
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            {routes.map(({ path, Component }) => (
+              <Route path={path} key={path} element={<Component />} />
+            ))}
+            <Route path="*" element={<div>404 not found</div>} />
+          </Routes>
+        </Suspense>
+      </MainLayout>
     </BrowserRouter>
   )
 }

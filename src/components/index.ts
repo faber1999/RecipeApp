@@ -1,1 +1,6 @@
-export { default as Navbar } from './Navbar/Navbar'
+export * from './Banner'
+export * from './Footer'
+export * from './Loader'
+export * from './MainLayout'
+export * from './Navbar'
+export * from './RecipeCard'
